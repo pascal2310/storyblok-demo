@@ -20,16 +20,7 @@ import { StoryTellingComponent } from "./storytelling/storytelling.component";
     FeatureComponent,
     StoryTellingComponent,
   ],
-  imports: [
-    BrowserModule,
-    DynamicModule.withComponents([
-      PageComponent,
-      TeaserComponent,
-      GridComponent,
-      FeatureComponent,
-      StoryTellingComponent,
-    ]),
-  ],
+  imports: [BrowserModule, DynamicModule],
   providers: [StoryblokService],
   bootstrap: [AppComponent],
 })
