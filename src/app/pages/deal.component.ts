@@ -31,9 +31,11 @@ export class DealComponent implements OnInit {
   }
 
   ngOnInit() {
+    const url = this.activeRoute.snapshot.url;
+
     this.storyblokService.getStories({ version: "draft" }).then(console.log);
     this.storyblokService
-      .getStory(`deals/${this.activeRoute.snapshot.params.id}`, {
+      .getStory(`${url[0].path}/${url[1].path}`, {
         version: "draft",
       })
       .then((data) => (this.story = data.story));

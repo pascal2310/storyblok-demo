@@ -7,18 +7,19 @@ import { HotelByDealComponent } from "./pages/hotelbydeal.component";
 
 const routes: Routes = [
   {
-    path: "deals/:id/:id",
+    path: "deals/:dealslug/:hotelslug",
     component: HotelByDealComponent,
   },
   {
-    path: "deals/:id",
+    path: "deals/:dealslug",
     component: DealComponent,
   },
   {
     path: "deals",
     component: DealsComponent,
   },
-  { path: "", component: HomeComponent },
+  { path: "home", component: HomeComponent },
+  { path: "", redirectTo: "home" },
 ]; // sets up routes constant where you define your routes
 
 // configures NgModule imports and exports
