@@ -22,9 +22,13 @@ export class HotelByDealComponent implements OnInit {
   }
 
   ngOnInit() {
+    const url = this.activeRoute.snapshot.url;
+
     this.storyblokService.getStories({ version: "draft" }).then(console.log);
     this.storyblokService
-      .getStory("deals/hotels", { version: "published" })
+      .getStory(`${url[0].path}/${url[1].path}/${url[2].path}`, {
+        version: "draft",
+      })
       .then((data) => (this.story = data.story));
   }
 }

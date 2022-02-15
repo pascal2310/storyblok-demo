@@ -1,16 +1,21 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router"; // CLI imports router
+import { DealComponent } from "./pages/deal.component";
 import { DealsComponent } from "./pages/deals.component";
 import { HomeComponent } from "./pages/home.component";
 import { HotelByDealComponent } from "./pages/hotelbydeal.component";
 
 const routes: Routes = [
   {
-    path: "deals/hotels/:id",
+    path: "deals/:id/:id",
     component: HotelByDealComponent,
   },
   {
-    path: "dealsu ",
+    path: "deals/:id",
+    component: DealComponent,
+  },
+  {
+    path: "deals",
     component: DealsComponent,
   },
   { path: "", component: HomeComponent },

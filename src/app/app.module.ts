@@ -9,11 +9,11 @@ import { GridComponent } from "./grid/grid.component";
 import { PageComponent } from "./page/page.component";
 import { FeatureComponent } from "./feature/feature.component";
 import { StoryTellingComponent } from "./storytelling/storytelling.component";
-import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app.routing.module";
-import { HomeComponent } from "./pages/home.component";
 import { DealsComponent } from "./pages/deals.component";
 import { HotelByDealComponent } from "./pages/hotelbydeal.component";
+import { DealComponent } from "./pages/deal.component";
+import { HomeComponent } from "./pages/home.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { HotelByDealComponent } from "./pages/hotelbydeal.component";
     FeatureComponent,
     StoryTellingComponent,
     HomeComponent,
+    DealComponent,
     DealsComponent,
     HotelByDealComponent,
   ],

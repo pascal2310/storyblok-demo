@@ -5,6 +5,7 @@ import { Components } from "../components";
 @Component({
   selector: "app-home",
   template: `
+    <h1>HomePage</h1>
     <div *ngIf="story.content">
       <ndc-dynamic
         [ndcDynamicComponent]="components[story.content.component]"
