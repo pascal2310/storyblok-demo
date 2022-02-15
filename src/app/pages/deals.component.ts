@@ -1,13 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { StoryblokService } from "./storyblok.service";
-import { Components } from "./components";
+import { StoryblokService } from "../storyblok.service";
+import { Components } from "../components";
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  selector: "app-deals",
+  templateUrl: "./deals.component.html",
 })
-export class AppComponent implements OnInit {
+export class DealsComponent implements OnInit {
   story = { content: null, name: "" };
   components = Components;
 
@@ -23,7 +22,5 @@ export class AppComponent implements OnInit {
     this.storyblokService
       .getStory("deals", { version: "draft" })
       .then((data) => (this.story = data.story));
-
-    console.log(this.story);
   }
 }

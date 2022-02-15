@@ -1,13 +1,20 @@
 import { Component, OnInit } from "@angular/core";
-import { StoryblokService } from "./storyblok.service";
-import { Components } from "./components";
+import { StoryblokService } from "../storyblok.service";
+import { Components } from "../components";
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  selector: "app-home",
+  template: `
+    <div *ngIf="story.content">
+      <ndc-dynamic
+        [ndcDynamicComponent]="components[story.content.component]"
+        [ndcDynamicInputs]="story.content"
+      >
+      </ndc-dynamic>
+    </div>
+  `,
 })
-export class AppComponent implements OnInit {
+export class HomeComponent implements OnInit {
   story = { content: null, name: "" };
   components = Components;
 
@@ -21,9 +28,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.storyblokService.getStories({ version: "draft" }).then(console.log);
     this.storyblokService
-      .getStory("deals", { version: "draft" })
+      .getStory("home", { version: "draft" })
       .then((data) => (this.story = data.story));
-
-    console.log(this.story);
   }
 }
